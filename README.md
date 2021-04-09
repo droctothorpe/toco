@@ -75,12 +75,6 @@ would generate the following TOC:
 go get github.com/droctothorpe/toco
 ```
 
-### Download binary (OSX only)
-```bash
-curl https://www.github.com/droctothorpe/toco/toco -o /usr/local/bin/toco && \
-chmod 700 /usr/local/bin/toco
-```
-
 ### Makefile
 ```bash
 git clone https://github.com/droctothorpe/toco.git
