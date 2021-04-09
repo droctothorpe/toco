@@ -77,7 +77,7 @@ go get github.com/droctothorpe/toco
 
 ### Download binary (OSX only)
 ```bash
-curl https://www.github.com/droctothorpe/toco/toco -o /usr/local/bin && \
+curl https://www.github.com/droctothorpe/toco/toco -o /usr/local/bin/toco && \
 chmod 700 /usr/local/bin/toco
 ```
 
