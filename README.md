@@ -9,7 +9,7 @@ homepage (`Home.md`) and sidebar (`_Sidebar.md`).
 You can see an example of what the resulting TOC looks like
 [here](https://github.com/droctothorpe/example-wiki/wiki).
 
-You can set toco up as a client-side pre-commit hook or integrate it into your
+You can set `toco` up as a client-side pre-commit hook or integrate it into your
 CI pipeline for even further automation.
 
 ## Usage
