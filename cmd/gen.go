@@ -17,7 +17,7 @@ import (
 var disableSidebar bool
 var disableHome bool
 
-// genCmd represents the gen command
+// genCmd represents the gen command.
 var genCmd = &cobra.Command{
 	Use:    "gen",
 	Short:  "Generate a table of contents and inject it into your wiki's homepage and sidebar",
@@ -53,6 +53,7 @@ var genCmd = &cobra.Command{
 		}
 
 		log.Info("Injection complete. Run 'toco push' to push your changes.")
+
 		return nil
 	},
 }
@@ -65,11 +66,14 @@ func init() {
 
 func globFiles(extension string) ([]string, error) {
 	var files []string
+
 	exclusionList := []string{"Home.md", "_Sidebar.md", "README.md"}
+
 	matches, err := filepath.Glob("./*." + extension)
 	if err != nil {
 		return nil, err
 	}
+
 out:
 	for _, match := range matches {
 		for _, exclusion := range exclusionList {
@@ -79,6 +83,7 @@ out:
 		}
 		files = append(files, match)
 	}
+
 	return files, nil
 }
 
@@ -87,7 +92,9 @@ func generateTOC(d map[string][][]string) string {
 	for key := range d {
 		keys = append(keys, key)
 	}
+
 	sort.Strings(keys)
+
 	log.Debug("sorted keys: ", keys)
 
 	var toc string
@@ -96,9 +103,6 @@ func generateTOC(d map[string][][]string) string {
 		toc += fmt.Sprintf("**%s**  \n", key)
 		for _, value := range d[key] {
 			toc += fmt.Sprintf("• [%s](%s)  \n", value[0], value[1])
-			// Some alternatives to the bullet:
-			// Bullet for reference: ◦
-			// Unicode space for reference: [  ]
 		}
 	}
 
@@ -116,10 +120,11 @@ func writeOutput(output, file string) error {
 
 func filesToMap(files []string) map[string][][]string {
 	d := make(map[string][][]string)
-	seperator := ":"
+	separator := ":"
+
 	for _, file := range files {
 		log.Debug("file: ", file)
-		split := strings.Split(file, seperator)
+		split := strings.Split(file, separator)
 		re := regexp.MustCompile(`-|_|\.`)
 		category := split[0]
 		category = re.ReplaceAllString(category, " ")

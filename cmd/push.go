@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// pushCmd represents the push command
+// pushCmd represents the push command.
 var pushCmd = &cobra.Command{
 	Use:   "push",
 	Short: "Consolidate git add, commit, and push",
