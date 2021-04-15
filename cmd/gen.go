@@ -99,10 +99,12 @@ func generateTOC(d map[string][][]string) string {
 
 	var toc string
 
+	toc += "  - [Home](/Home)\n"
+
 	for _, key := range keys {
-		toc += fmt.Sprintf("**%s**  \n", key)
+		toc += fmt.Sprintf("- **%s**\n", key)
 		for _, value := range d[key] {
-			toc += fmt.Sprintf("• [%s](%s)  \n", value[0], value[1])
+			toc += fmt.Sprintf("  - [%s](%s)\n", value[0], value[1])
 		}
 	}
 
