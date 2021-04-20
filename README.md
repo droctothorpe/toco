@@ -62,11 +62,11 @@ Standards:Development.md
 ```
 would generate the following TOC:
 
-**Pipeline**  
-• [CD](./Pipeline%3ACD)  
-• [CI](./Pipeline%3ACI)  
-**Standards**  
-• [Development](./Standards%3ADevelopment)  
+- **Pipeline**  
+  - [CD](./Pipeline%3ACD)  
+  - [CI](./Pipeline%3ACI)  
+- **Standards**  
+  - [Development](./Standards%3ADevelopment)  
 
 ## Installation
 
