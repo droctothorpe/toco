@@ -77,7 +77,7 @@ func globFiles(extension string) ([]string, error) {
 out:
 	for _, match := range matches {
 		for _, exclusion := range exclusionList {
-			if match == exclusion {
+			if strings.EqualFold(match, exclusion) {
 				continue out
 			}
 		}
